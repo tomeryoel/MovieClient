@@ -28,7 +28,7 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
             const updatedReviews = [...(reviews ||[]), {body:rev.value}];
     
             rev.value = "";
-    
+            await getMovieData(movieId);
             setReviews(updatedReviews);
         }
         catch(err)

@@ -38,15 +38,15 @@ function App() {
 
       setMovie(singleMovie);
 
-      setReviews(singleMovie.reviews);
+      setReviews(singleMovie.reviews || []);
 
 
     }
     catch (error) {
-      console.error(error);
+      console.error("Error fetching movie data:", error);
     }
 
-  }
+  };
 
   useEffect(() => {
     getMovies();
